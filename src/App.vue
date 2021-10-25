@@ -4,6 +4,7 @@
 
 <script lang="ts">
 
+import Instance from './common/util/axios/index';
 import { defineComponent, onMounted } from "vue";
 
 export default defineComponent({
@@ -20,7 +21,6 @@ export default defineComponent({
             
       function init() {
           console.log('this', this);
-        //   $error('123123');
       }
 
       return {

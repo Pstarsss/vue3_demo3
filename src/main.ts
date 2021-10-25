@@ -7,8 +7,10 @@ import ElementPlus from "element-plus";
 import Components from "./common/Components/index.js";
 import "element-plus/lib/theme-chalk/index.css";
 
-createApp(App)
-    .use(ElementPlus)
+const app = createApp(App);
+
+app.use(ElementPlus)
     .use(Components)
-    .use(Store)
-    .mount("#app");
+    .use(Store);
+
+app.mount("#app");
