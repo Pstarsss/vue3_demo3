@@ -45,8 +45,8 @@ export default defineComponent({
             );
 
             axios.interceptors.response.use(
-                function(res) {
-                    const {data: {status: {code, detail}}} = res;
+                function(res:any) {
+                    const {data: {status: {code, detail} = {code: 0, detail: ''}} = {}} = res;
 
                     // if (res.data && res.data.status) {
                     //     const {code, detail} = res.data.status;
