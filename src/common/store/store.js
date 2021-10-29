@@ -2,12 +2,12 @@
  * @Author: xingpan 
  * @Date: 2021-10-26 10:59:22 
  * @Last Modified by: xingpan
- * @Last Modified time: 2021-10-26 16:56:13
+ * @Last Modified time: 2021-10-29 14:49:19
  */
 
 import { createStore } from 'vuex';
 
-import User from '../resource/user/index';
+import User from '@/common/resource/user/index';
 
 const SAVE = "SAVE";
 const CLEAR = "CLEAR";
@@ -29,14 +29,24 @@ const mutations = {
         state.fetched = true;
     },
 
-    [CLEAR]: (state, user) => {
+    [CLEAR]: (state) => {
         state.user = {};
         state.fetched = true;
     }
 }
 
 const actions = {
-    
+    async fetch({commit}) {
+        const {data: {body: user}} = await User.fetchUserPrivilege();
+        commit(SAVE, user);
+        return user;
+    },
+
+    async logout({commit}) {
+        await User.logout();
+        commit(CLEAR);
+        User.goLogin({params: {redirectUrl: location.href}});
+    }
 }
 
 

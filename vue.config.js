@@ -2,12 +2,12 @@
  * @Author: xingpan 
  * @Date: 2021-10-19 10:44:15 
  * @Last Modified by: xingpan
- * @Last Modified time: 2021-10-20 10:50:59
+ * @Last Modified time: 2021-10-29 11:20:08
  */
 
 const path = require('path');
 const fs = require('fs');
-const resolve = dir => path.resolve(__dirname, dir);
+const resolvePath = dir => path.resolve(__dirname, dir);
 // const modifyVars = 
 
 module.exports = {
@@ -20,5 +20,5 @@ module.exports = {
             javascriptEnabled: true,
           }
         }
-    },
+    }
 }

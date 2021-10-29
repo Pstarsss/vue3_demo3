@@ -1,5 +1,11 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
+  <div>
+      <span>
+        111
+          <hr>
+      </span>
+
+  </div>
 </template>
 
 <script lang="ts">
@@ -8,14 +14,19 @@ import { defineComponent, onMounted } from "vue";
 
 import axios from 'axios';
 
-import { ResponseKey, StatusKey } from '../src/common/ts-interface/response'
+import { ResponseKey, StatusKey } from '@/common/ts-interface/response';
+import { 
+    YQG_STATUS_CODE_SUCCESS, 
+    YQG_STATUS_CODE_SSO_NOT_LOGIN, 
+    YQG_STATUS_CODE_NOT_LOGIN } 
+from '@/common/constant/response-code';
 
 export default defineComponent({
     name: "App",
 
     components: {},
 
-    setup () {
+    setup (props, context) {
         onMounted(() => {
           //   axios.get("/api");
             init();
@@ -24,8 +35,6 @@ export default defineComponent({
     
             
         function init() {
-            const {$message} = this;
-            console.log('$message', $message);
         }
 
         function initHttpInterceptor() {
@@ -48,16 +57,20 @@ export default defineComponent({
                 function(res:any) {
                     const {data: {status: {code, detail} = {code: 0, detail: ''}} = {}} = res;
 
-                    // if (res.data && res.data.status) {
-                    //     const {code, detail} = res.data.status;
-                    //     // responseType 
-                    //     // code 状态码啥的 
-                    //     switch(code) {
-                    //         case 200: return Promise.resolve(res); break;
+                    // responseType 
+                    // code 状态码啥的 
+                    switch(code) {
+                        case YQG_STATUS_CODE_SUCCESS: return Promise.resolve(res); break;
+                        case YQG_STATUS_CODE_SSO_NOT_LOGIN: {
 
-                    //         default: { new Error(detail) }
-                    //     }
-                    // }
+                        }; break;
+
+                        case YQG_STATUS_CODE_NOT_LOGIN: {
+
+                        }; break;
+
+                        default: { new Error(detail) }
+                    }
 
                     console.log('响应拦截器', res);
                     return res;
@@ -76,3 +89,11 @@ export default defineComponent({
   }
 });
 </script>
+
+<style scoped>
+
+hr {
+    height: .5em;
+    background: currentColor;
+}
+</style>

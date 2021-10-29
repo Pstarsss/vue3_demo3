@@ -1,4 +1,5 @@
 const path = require('path');
+const resolvePath = dir => path.resolve(__dirname, dir);
 
 module.exports = {
     entry: './src/main.ts',
@@ -15,5 +16,13 @@ module.exports = {
                 changeOrigin: true
             }
         }
+    },
+
+    resolve: {
+        alias: {
+            '@': resolvePath('src')
+        },
+        //因import引入的vue文件都没有加.vue后缀导致报404，所以加了这个配置
+        extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue']
     }
 }
