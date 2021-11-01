@@ -2,7 +2,7 @@
  * @Author: xingpan 
  * @Date: 2021-10-19 10:44:15 
  * @Last Modified by: xingpan
- * @Last Modified time: 2021-10-29 11:20:08
+ * @Last Modified time: 2021-10-31 10:37:02
  */
 
 const path = require('path');
@@ -19,6 +19,7 @@ module.exports = {
           less: {
             javascriptEnabled: true,
           }
-        }
+        },
+        requireModuleExtension: false
     }
 }

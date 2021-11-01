@@ -3,8 +3,13 @@
       <span>
         111
           <hr>
-      </span>
+        <router-link to="/test">test</router-link>
 
+        <router-link to="/test/t1">t1</router-link>
+
+        <router-link to="/test/t2">t2</router-link>
+        <router-view />
+      </span>
   </div>
 </template>
 

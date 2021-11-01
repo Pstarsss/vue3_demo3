@@ -2,20 +2,14 @@
  * @Author: xingpan 
  * @Date: 2021-10-29 14:57:02 
  * @Last Modified by: xingpan
- * @Last Modified time: 2021-10-29 15:18:47
+ * @Last Modified time: 2021-10-30 10:26:29
  */
 
-import { createRouter, createWebHashHistory } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 
-const home = { template: '<div>Home</div>' };
-const about = { template: '<div>About</div>' };
-
-const routes = [
-    {path: '/', component: home},
-    {path: '/about', component: about}
-]
+import routes from './routes/index';
 
 export const Router = createRouter({
-    history: createWebHashHistory(),
+    history: createWebHistory(),
     routes
 });
