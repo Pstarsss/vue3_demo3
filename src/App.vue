@@ -1,21 +1,20 @@
 <template>
-  <div>
-      <span>
-        111
-          <hr>
-        <router-link to="/test">test</router-link>
-
-        <router-link to="/test/t1">t1</router-link>
-
-        <router-link to="/test/t2">t2</router-link>
-        <router-view />
-      </span>
-  </div>
+    <div class="app">
+        <a-config-provide :locale="locale">
+            <router-view />
+        </a-config-provide>
+    </div>
 </template>
 
 <script lang="ts">
 
-import { defineComponent, onMounted } from "vue";
+import { 
+    ref, 
+    defineComponent, 
+    onMounted,
+    provide,
+    readonly
+} from "vue";
 
 import axios from 'axios';
 
@@ -26,18 +25,24 @@ import {
     YQG_STATUS_CODE_NOT_LOGIN } 
 from '@/common/constant/response-code';
 
+import enUS from 'ant-design-vue/es/locale/en_US';
+import zhCN from 'ant-design-vue/es/locale/zh_CN';
+import moment from 'moment';
+import 'moment/locale/zh-cn';
+
+moment.locale('en');
+
 export default defineComponent({
     name: "App",
 
-    components: {},
-
     setup (props, context) {
+        let locale = ref();
+
         onMounted(() => {
           //   axios.get("/api");
             init();
             initHttpInterceptor();
         })
-    
             
         function init() {
         }
@@ -88,17 +93,25 @@ export default defineComponent({
             )
         } 
 
+        function changeLocale(value) {
+            locale = value;
+        }
+
+        provide('locale', readonly(locale));
+        provide('changeLocale', changeLocale);
+
         return {
             init,
+            initHttpInterceptor,
+            moment,
+            locale: enUS
         }
   }
 });
 </script>
 
-<style scoped>
+<style>
+@import '~@/common/style/common.css';
+@import '~ant-design-vue/dist/antd.css';
 
-hr {
-    height: .5em;
-    background: currentColor;
-}
 </style>

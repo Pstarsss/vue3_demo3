@@ -1,12 +1,25 @@
 <template>
   <div class="T2">
-      T2
+        月
+        <a-button type="primary" @click="changeLocale">
+            changeLocale
+        </a-button>
   </div>
 </template>
 
 <script>
-export default {
+import { inject } from 'vue';
 
+export default {
+    name: 'T2',
+
+    setup() {
+        const changeLocale = inject(changeLocale);
+
+        return {
+            changeLocale
+        }
+    }
 }
 </script>
 

@@ -2,13 +2,18 @@
  * @Author: xingpan 
  * @Date: 2021-10-14 15:14:50 
  * @Last Modified by: xingpan
- * @Last Modified time: 2021-10-28 10:49:13
+ * @Last Modified time: 2021-11-01 16:56:16
  */
 
-import { DatePicker } from "ant-design-vue";
+import { DatePicker, ConfigProvider, Popconfirm, Button, message } from "ant-design-vue";
 
 export default {
     install(Vue) {
-        [DatePicker].forEach(plugin => Vue.use(plugin));
+        [
+            DatePicker, 
+            ConfigProvider, 
+            Popconfirm,
+            Button
+        ].forEach(plugin => Vue.component(plugin));
     }
 }

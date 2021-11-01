@@ -24,7 +24,7 @@ module.exports = {
             'px-admin': './src'
         },
         //因import引入的vue文件都没有加.vue后缀导致报404，所以加了这个配置
-        extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue', 'css']
+        extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue']
     },
 
     module: {
