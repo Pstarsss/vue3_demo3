@@ -9,7 +9,7 @@
 <script lang="ts">
 
 import { 
-    ref, 
+    ref,
     defineComponent, 
     onMounted,
     provide,
@@ -25,6 +25,8 @@ import {
     YQG_STATUS_CODE_NOT_LOGIN } 
 from '@/common/constant/response-code';
 
+import { message } from "ant-design-vue";
+
 import enUS from 'ant-design-vue/es/locale/en_US';
 import zhCN from 'ant-design-vue/es/locale/zh_CN';
 import moment from 'moment';
@@ -36,15 +38,23 @@ export default defineComponent({
     name: "App",
 
     setup (props, context) {
-        let locale = ref();
+        let locale:object = ref();
 
         onMounted(() => {
           //   axios.get("/api");
-            init();
+            initProvide();
             initHttpInterceptor();
         })
             
-        function init() {
+        function initProvide() {
+            provide('$messageInfo', message.info);
+            provide('$messageSuccess', message.success);
+            provide('$messageError', message.error);
+            provide('$messageWarning', message.warning);
+            provide('$messageWarn', message.warn);
+            provide('$messageLoading', message.loading);
+            provide('locale', readonly(locale));
+            provide('changeLocale', changeLocale);
         }
 
         function initHttpInterceptor() {
@@ -93,16 +103,12 @@ export default defineComponent({
             )
         } 
 
-        function changeLocale(value) {
-            locale = value;
+        function changeLocale() {
+            locale = zhCN;
+            moment.locale('zh-cn')
         }
 
-        provide('locale', readonly(locale));
-        provide('changeLocale', changeLocale);
-
         return {
-            init,
-            initHttpInterceptor,
             moment,
             locale: enUS
         }
