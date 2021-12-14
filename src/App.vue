@@ -117,7 +117,6 @@ export default defineComponent({
 </script>
 
 <style>
-@import '~@/common/style/common.css';
-@import '~ant-design-vue/dist/antd.css';
-
+    @import '~@/common/style/common.css';
+    @import '~ant-design-vue/dist/antd.css';
 </style>

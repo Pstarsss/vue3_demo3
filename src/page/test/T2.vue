@@ -1,22 +1,27 @@
 <template>
   <div class="T2">
-        月
         <a-button type="primary" @click="changeLocale">
             changeLocale
         </a-button>
-        <a-date-picker />
   </div>
 </template>
 
 <script>
 import { inject, onMounted } from 'vue';
 
+import PxLayout from '@/common/components/px-layout/index';
+
 export default {
     name: 'T2',
+
+    components: {
+        PxLayout
+    },
 
     setup() {
         const changeLocale = inject('changeLocale');
         const messageInfo = inject('$messageInfo');
+
         onMounted(() => {
             messageInfo('洒大地撒的撒的');
         });
@@ -28,6 +33,6 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>
