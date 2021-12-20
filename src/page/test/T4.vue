@@ -4,6 +4,7 @@
         <a-upload
             v-model:file-list="fileList"
             name="file"
+            :multiple="false"
             @change="handleChange"
             @preview="onPreview"
         >
@@ -12,6 +13,8 @@
                 Click to Upload
             </a-button>
         </a-upload>
+
+        <input type="file" name="" @change="onImport($event)">
 
         <table cellpadding="0" cellspacing="0" border="1">
             <thead>
@@ -89,6 +92,10 @@
                 </template>
             </tbody>         
         </table>
+
+        <button @click="addCount">add</button>
+        <div v-html="showTtml">
+        </div>
     </div>
 
 </template>
@@ -121,15 +128,45 @@ export default defineComponent({
     },
 
     setup() {
-        // console.log('Xlsx', Xlsx);
-        const fileList = ref([]);
+        console.log('Xlsx', Xlsx);
+        const fileList = ref();
+        const pxFiles = ref();
+        const showTtml = ref('');
 
         const handleChange = (info: FileInfo) => {
-            console.log('fFileInfo', info);
+            // console.log('fileList', fileList.value);
+
+            let temp = fileList.value[0];
+
+
+            console.log('temp', temp);
+
+            console.log('11', temp.name)
+
+            // let workbook = Xlsx.read(temp);
+            
+            // console.log('workbook', workbook);
         }
 
-        const onPreview = (info) => {
-            console.log('onPreview info', info);
+        const onPreview = () => {
+        }
+
+        const onImport = (obj) => {
+            console.log('obj', obj.target.files);
+            let f = obj.target.files[0];
+            
+            let reader = new FileReader();
+
+            reader.onload = function (e) {
+                let data = e.target && e.target.result;
+                let wb = Xlsx.read(data, {
+                    type: 'binary'
+                });
+                console.log('wb', wb);
+                let workSheet = wb.Sheets[wb.SheetNames[0]];
+                showTtml.value = Xlsx.utils.sheet_to_html(workSheet);
+            }
+            reader.readAsBinaryString(f);
         }
 
         let arr = [
@@ -152,12 +189,22 @@ export default defineComponent({
 
         let arrKeys = Object.keys(arr);
 
+
+        function addCount() {
+
+        }
+
         return {
             fileList,
+            pxFiles,
+            showTtml,
+            arr,
+            arrKeys,
+
             handleChange,
             onPreview,
-            arr,
-            arrKeys
+            onImport,
+            addCount
         }
     }
 })
