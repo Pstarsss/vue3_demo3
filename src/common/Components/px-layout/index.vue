@@ -2,8 +2,7 @@
     <div class="">
         <a-layout>
             <a-layout-header class="px-header">
-                <div>消灭星星的肚子</div>
-
+                <span class="px-header-title">消灭星星的肚子</span>
                 <menu-unfold-outlined
                     v-if="collapsed"
                     class="trigger"
@@ -83,7 +82,7 @@ import {
 } from '@ant-design/icons-vue';
 
 export default defineComponent({
-    name: '',
+    name: 'PxLayout',
 
     components: {
         PieChartOutlined,
@@ -105,15 +104,23 @@ export default defineComponent({
 
 </script>
 
-<style scoped link="">
+<style scoped lang="less">
+    @import '~@/common/style/components.less';
 
     .px-header {
-        display: flex;
-        align-items: center;
-        justify-content: center;
         background: #fff; 
         padding: 0;   
     }
+
+    .px-header-title {
+        padding-left: 30px;
+
+        font-family: 'Ma Shan Zheng', cursive;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 30px;
+        color: @layout-header-title;
+    } 
 
     #components-layout-demo-side .logo {
         height: 32px;
