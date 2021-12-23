@@ -1,6 +1,7 @@
 <template>
   <div class="T1">
-    T1
+    Dont`t Repeat Yourself 
+    <p>不要重复自己</p>
     <div class="a1">
         <div class="box hundred-box">
             background-clip:padding-box 
@@ -23,6 +24,23 @@
 
     <br>
     <div class="t1-bg-linear hundred-box" />
+
+    <fieldset>
+        <legend>repeating-linear-gradient </legend>
+        一个鲜为人知的真相是linear-gradient()和radial-gradient()还各有一个循环式的加强版：
+        repeating-linear-gradient() 和repeating-radial-gradient()。
+        它们的工作方式跟前两者类似，
+        只有一点不同：色标是无限循环重复的，直到填满整个背景.
+        效果图：
+        <div>
+            <img src="./img/2071639968842_.pic.jpg">
+            <img src="./img/2061639968768_.pic.jpg">
+        </div>
+        <div class="t1-repeating-linear-gradient">
+            
+        </div>
+    </fieldset>
+
   </div>
 </template>
 
@@ -91,4 +109,10 @@ export default {
     background: linear-gradient(#fb5 33%, #58a 0, #58a 67%, yellowgreen 0);
     background-size: 100% 45px;
 }
+
+.t1-repeating-linear-gradient {
+    background: repeating-linear-gradient(60deg, #fb3,#fb3 15px, #58a 0,#58a 30px);
+    height: 100px;
+}
+
 </style>
