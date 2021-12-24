@@ -1,32 +1,27 @@
 <template>
   <div class="T3">
-      <px-layout></px-layout>
+    <px-layout></px-layout>
   </div>
 </template>
 
 <script>
-import { inject, onMounted } from 'vue';
+import { inject, onMounted } from "vue";
 
-import PxLayout from '@/common/components/px-layout/index';
+import PxLayout from "@/common/components/px-layout/index";
 
 export default {
-    name: 'T3',
+  name: "T3",
 
-    components: {
-        PxLayout
-    },
+  components: {
+    PxLayout,
+  },
 
-    setup() {
-        
-        onMounted(() => {
-        });
+  setup() {
+    onMounted(() => {});
 
-        return {
-        }
-    }
-}
+    return {};
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

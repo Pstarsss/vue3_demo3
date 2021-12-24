@@ -1,34 +1,34 @@
 /*
- * @Author: xingpan 
- * @Date: 2021-10-14 15:14:50 
+ * @Author: xingpan
+ * @Date: 2021-10-14 15:14:50
  * @Last Modified by: xingpan
  * @Last Modified time: 2021-12-14 16:01:46
  */
 
-import { 
-    DatePicker, 
-    ConfigProvider, 
-    Popconfirm, 
-    Button, 
-    Layout,
-    Menu,
-    Icon,
-    Upload,
-    Breadcrumb 
+import {
+  DatePicker,
+  ConfigProvider,
+  Popconfirm,
+  Button,
+  Layout,
+  Menu,
+  Icon,
+  Upload,
+  Breadcrumb,
 } from "ant-design-vue";
 
 export default {
-    install(Vue) {
-        [
-            DatePicker, 
-            ConfigProvider, 
-            Popconfirm,
-            Button,
-            Layout,
-            Menu,
-            Icon,
-            Upload,
-            Breadcrumb
-        ].forEach(plugin => Vue.use(plugin));
-    }
-}
+  install(Vue) {
+    [
+      DatePicker,
+      ConfigProvider,
+      Popconfirm,
+      Button,
+      Layout,
+      Menu,
+      Icon,
+      Upload,
+      Breadcrumb,
+    ].forEach((plugin) => Vue.use(plugin));
+  },
+};
