@@ -22,7 +22,7 @@ import { message } from "ant-design-vue";
 import enUS from "ant-design-vue/es/locale/en_US";
 import zhCN from "ant-design-vue/es/locale/zh_CN";
 
-import PxLayout from "@/common/components/px-layout/index";
+import PxLayout from "./common/components/px-layout/index.vue";
 
 import moment from "moment";
 import "moment/locale/zh-cn";

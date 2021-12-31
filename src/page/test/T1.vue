@@ -1,7 +1,5 @@
 <template>
   <div class="T1">
-    Dont`t Repeat Yourself
-    <p>不要重复自己</p>
     <div class="a1">
       <div class="box hundred-box">
         background-clip:padding-box 背景颜色不会延伸到 border

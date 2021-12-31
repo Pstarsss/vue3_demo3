@@ -19,13 +19,20 @@
                         :key="subName"
                     >
                         <template #title v-if="meta">
-                            <a-icon v-if="meta.icon" :type="meta.icon"></a-icon>
+                            <component
+                                :is="meta.icon"
+                                v-if="meta.icon"
+                            />
                             <span v-if="meta.navTitle">{{ meta.navTitle }}</span>
                         </template>
 
                         <template v-if="children && children.length">
                             <a-menu-item v-for="{name: childName, path, meta: childMeta} in children" :key="childName">
                                 <router-link :to="{path}">
+                                    <component
+                                        :is="childMeta.icon"
+                                        v-if="childMeta.icon"
+                                    />
                                     {{ childMeta.navTitle }}
                                 </router-link>
                             </a-menu-item>
@@ -37,13 +44,14 @@
             <a-layout>
                 <a-layout-content class="margin-16-leftRight">
                     <a-breadcrumb class="margin-16-topBottom">
-                        <a-breadcrumb-item>
-                            {{ $routes }}
+                        <a-breadcrumb-item
+                            v-for="({name, meta: {navTitle}}) in $route.matched"    
+                            :key="name"
+                        >
+                            {{ navTitle }}
                         </a-breadcrumb-item>
                     </a-breadcrumb>
-                        <div class="layout-content">
-                            <router-view />
-                        </div>
+                    <router-view />
                 </a-layout-content>
             </a-layout>
         </a-layout>
@@ -56,35 +64,10 @@ import { defineComponent, ref, onMounted, computed } from 'vue'
 
 import routers from '../../route/routes/index';
 
-import {
-    PieChartOutlined,
-    DesktopOutlined,
-    UserOutlined,
-    TeamOutlined,
-    FileOutlined,
-    MenuUnfoldOutlined,
-    MenuFoldOutlined
-} from '@ant-design/icons-vue';
-import func from 'vue-temp/vue-editor-bridge';
-
 export default defineComponent({
     name: 'PxLayout',
 
-    components: {
-        PieChartOutlined,
-        DesktopOutlined,
-        UserOutlined,
-        TeamOutlined,
-        FileOutlined,
-        MenuUnfoldOutlined,
-        MenuFoldOutlined
-    },
-
     setup() {
-
-        onMounted(function mounted() {
-            console.log('router', routers);
-        });
 
         let sideRouters = computed(function getSiderRoutes() {
             return filterRoutes(routers).filter(({subRoutes}) => subRoutes && subRoutes.length);

@@ -2,7 +2,7 @@
  * @Author: xingpan
  * @Date: 2021-10-30 10:07:54
  * @Last Modified by: xingpan
- * @Last Modified time: 2021-12-28 10:03:55
+ * @Last Modified time: 2021-12-31 16:58:38
  */
 
 const component = { template: "<router-view />" };
@@ -13,15 +13,16 @@ export default [
     path: "/test",
     meta: {
         navTitle: 'css啦',
-        icon: 'build'
+        icon: 'StarOutlined'
     },
     component,
     children: [
       {
-        name: "T1",
+        name: "background-border",
         path: "/test/t1",
         meta: {
-            navTitle: '一些bg',
+            navTitle: '背景与边框',
+            icon: ''
         },
         component: () => import("@/page/test/T1"),
       },
