@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <a-config-provider :locale="locale">
-      <router-view />
+        <px-layout></px-layout>
     </a-config-provider>
   </div>
 </template>
@@ -21,6 +21,9 @@ import { message } from "ant-design-vue";
 
 import enUS from "ant-design-vue/es/locale/en_US";
 import zhCN from "ant-design-vue/es/locale/zh_CN";
+
+import PxLayout from "@/common/components/px-layout/index";
+
 import moment from "moment";
 import "moment/locale/zh-cn";
 
@@ -29,11 +32,14 @@ moment.locale("en");
 export default defineComponent({
   name: "App",
 
+  components: {
+      PxLayout
+  },
+
   setup() {
     let locale: object = ref();
 
     onMounted(() => {
-      //   axios.get("/api");
       initProvide();
       initHttpInterceptor();
     });

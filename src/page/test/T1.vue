@@ -36,6 +36,28 @@
       </div>
       <div class="t1-repeating-linear-gradient"></div>
     </fieldset>
+
+    <section>
+        <div class="px-title">css 渐变，条纹背景</div>
+
+        <div class="stripe-1 hundred-box">
+            通过交错的颜色条 与背景色的配合来展示网格效果
+            <!-- 
+                background: white;
+                background-image: linear-gradient(90deg, rgba(255,0,0, 0.5)50%, transparent 0), linear-gradient(rgba(255,0,0)50%, transparent 0);
+                background-size: 30px 30px;
+            -->
+        </div>
+
+        <div class="stripe-2 hundred-box">
+            通过修改bg 颜色条的宽度 来控制网格子的大小。
+            <!-- 
+                background: #;
+                background-image: linear-gradient(90deg, rgba(255,0,0, 0.5)50%, transparent 0), linear-gradient(rgba(255,0,0)50%, transparent 0);
+                background-size: 30px 30px;
+            -->
+        </div>
+    </section>
   </div>
 </template>
 
@@ -49,7 +71,9 @@ export default {
 };
 </script>
 
-<style rel="stylesheet/scss" scoped>
+<style scoped lang="less">
+@import "~@/common/style/variables.less";
+
 .T1 {
   padding: 10px;
 }
@@ -112,5 +136,17 @@ export default {
     #58a 30px
   );
   height: 100px;
+}
+
+.stripe-1 {
+    background: white;
+    background-image: linear-gradient(90deg, rgba(255,0,0, 0.5)50%, transparent 0), linear-gradient(rgba(255,0,0)50%, transparent 0);
+    background-size: 30px 30px;
+}
+
+.stripe-2 {
+    background: #58a;
+    background-image: linear-gradient( white 2px, transparent 0), linear-gradient(90deg, white 2px, transparent 0);
+    background-size: 30px 30px;
 }
 </style>

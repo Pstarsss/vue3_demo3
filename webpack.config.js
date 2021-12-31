@@ -38,6 +38,13 @@ module.exports = {
           import: true,
         },
       },
+      {
+        test: /\.less$/i,
+        use: ["vue-style-loader", "style-loader", "less-loader"],
+        options: {
+          import: true,
+        },
+      },
     ],
   },
 };
