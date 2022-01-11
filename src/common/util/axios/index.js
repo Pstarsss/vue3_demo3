@@ -2,20 +2,36 @@
  * @Author: xingpan
  * @Date: 2021-10-25 19:01:19
  * @Last Modified by: xingpan
- * @Last Modified time: 2021-10-29 14:44:24
+ * @Last Modified time: 2022-01-10 16:48:39
  */
 
 import axios from "axios";
 
 const THIS = {};
 
+var ObjectKey;
+(function (ObjectKey) {
+  ObjectKey["Dot"] = ".k";
+  ObjectKey["Bracket"] = "[k]";
+  ObjectKey["Whole"] = "json";
+})(ObjectKey || (ObjectKey = {}));
+
+var ArrayKey;
+(function (ArrayKey) {
+  ArrayKey["None"] = "";
+  ArrayKey["Dot"] = ".i";
+  ArrayKey["Bracket"] = "[i]";
+  ArrayKey["EmptyBracket"] = "[]";
+  ArrayKey["Whole"] = "json";
+})(ArrayKey || (ArrayKey = {}));
+
 var __spreadArrays =
   (THIS && THIS.__spreadArrays) ||
   function () {
     for (var s = 0, i = 0, il = arguments.length; i < il; i++)
       s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-      for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+    for (var r = Array(s), k = 0, i1 = 0; i < il; i1++)
+      for (var a = arguments[i1], j = 0, jl = a.length; j < jl; j++, k++)
         r[k] = a[j];
     return r;
   };
@@ -104,6 +120,22 @@ var objToFormData = function (obj, config) {
   return formData;
 };
 
+var __assign =
+  (this && this.__assign) ||
+  function () {
+    __assign =
+      Object.assign ||
+      function (t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+          s = arguments[i];
+          for (var p in s)
+            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+      };
+    return __assign.apply(this, arguments);
+  };
+
 function parse(url, dataOrConfig, config) {
   var _a = THIS,
     _b = _a.getHost,
@@ -136,12 +168,16 @@ var __rest =
       if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
         t[p] = s[p];
     if (s != null && typeof Object.getOwnPropertySymbols === "function")
-      for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+      for (
+        var i = 0, p1 = Object.getOwnPropertySymbols(s);
+        i < p1.length;
+        i++
+      ) {
         if (
-          e.indexOf(p[i]) < 0 &&
-          Object.prototype.propertyIsEnumerable.call(s, p[i])
+          e.indexOf(p1[i]) < 0 &&
+          Object.prototype.propertyIsEnumerable.call(s, p1[i])
         )
-          t[p[i]] = s[p[i]];
+          t[p1[i]] = s[p1[i]];
       }
     return t;
   };

@@ -94,7 +94,6 @@
       </tbody>
     </table>
 
-    <button @click="addCount">add</button>
     <div v-html="showTtml"></div>
   </div>
 </template>
@@ -119,36 +118,24 @@ import { UploadOutlined } from "@ant-design/icons-vue";
 import Xlsx from "xlsx";
 
 export default defineComponent({
-  name: "",
+  name: "T4",
 
   components: {
     UploadOutlined,
   },
 
   setup() {
-    console.log("Xlsx", Xlsx);
     const fileList = ref();
     const pxFiles = ref();
     const showTtml = ref("");
 
     const handleChange = (info: FileInfo) => {
-      // console.log('fileList', fileList.value);
-
-      let temp = fileList.value[0];
-
-      console.log("temp", temp);
-
-      console.log("11", temp.name);
-
-      // let workbook = Xlsx.read(temp);
-
-      // console.log('workbook', workbook);
+      return info;
     };
 
-    const onPreview = () => {};
+    const onPreview = () => ({});
 
     const onImport = (obj) => {
-      console.log("obj", obj.target.files);
       let f = obj.target.files[0];
 
       let reader = new FileReader();
@@ -158,7 +145,6 @@ export default defineComponent({
         let wb = Xlsx.read(data, {
           type: "binary",
         });
-        console.log("wb", wb);
         let workSheet = wb.Sheets[wb.SheetNames[0]];
         showTtml.value = Xlsx.utils.sheet_to_html(workSheet);
       };
@@ -185,8 +171,6 @@ export default defineComponent({
 
     let arrKeys = Object.keys(arr);
 
-    function addCount() {}
-
     return {
       fileList,
       pxFiles,
@@ -197,7 +181,6 @@ export default defineComponent({
       handleChange,
       onPreview,
       onImport,
-      addCount,
     };
   },
 });

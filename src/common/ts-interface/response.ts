@@ -2,11 +2,10 @@
  * @Author: xingpan
  * @Date: 2021-10-27 18:42:05
  * @Last Modified by: xingpan
- * @Last Modified time: 2021-10-27 19:24:07
+ * @Last Modified time: 2022-01-10 16:50:03
  */
 
-import { AxiosResponse } from "axios";
-
+// import { AxiosResponse } from "axios";
 export interface StatusKey {
   code: number;
   detail: string;
@@ -14,7 +13,7 @@ export interface StatusKey {
 }
 
 export interface ResponseKey {
-  body: Object | Array<Object>;
+  body: any;
   status: StatusKey;
   // ...AxiosResponse
 }

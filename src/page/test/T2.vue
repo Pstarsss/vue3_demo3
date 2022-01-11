@@ -1,20 +1,20 @@
 <template>
   <div class="T2">
     <a-button type="primary" @click="changeLocale"> changeLocale </a-button>
+
+    <div>
+      overflow-wrap :
+      是用来说明当一个不能被分开的字符串太长而不能填充其包裹盒时，为防止其溢出，浏览器是否允许这样的单词中断换行
+      overflow-wrap: break-word; 一般使用该属性去过长的单词换行展示.
+    </div>
   </div>
 </template>
 
 <script>
 import { inject, onMounted } from "vue";
 
-import PxLayout from "@/common/components/px-layout/index";
-
 export default {
   name: "T2",
-
-  components: {
-    PxLayout,
-  },
 
   setup() {
     const changeLocale = inject("changeLocale");

@@ -1,4 +1,5 @@
-const path = require("path");
+import path from "path";
+
 const resolvePath = (dir) => path.resolve(__dirname, dir);
 
 module.exports = {

@@ -1,21 +1,17 @@
 <template>
-  <div class="T3">
-  </div>
+  <div class="T3"></div>
 </template>
 
 <script>
-import { inject, onMounted } from "vue";
-
+import { onMounted } from "vue";
 
 export default {
   name: "T3",
 
   setup() {
-    onMounted(() => {});
+    onMounted(() => ({}));
 
     return {};
   },
 };
 </script>
-
-<style></style>

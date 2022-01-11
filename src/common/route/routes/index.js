@@ -11,25 +11,25 @@ export default [
   {
     name: "homeWeb",
     path: "/index",
-    component: { template: '<div></div>' },
+    component: { template: "<div></div>" },
     meta: {
-        navTitle: '首页',
-        hideInSider: true
-    }
+      navTitle: "首页",
+      hideInSider: true,
+    },
   },
   ...test,
   {
     path: "/",
     redirect: { name: "homeWeb" },
     meta: {
-        hideInSider: true
-    }
+      hideInSider: true,
+    },
   },
   {
     path: "/:catchAll(.*)",
     redirect: { name: "homeWeb" },
     meta: {
-        hideInSider: true
-    }
+      hideInSider: true,
+    },
   },
 ];

@@ -16,5 +16,8 @@ module.exports = {
   rules: {
     "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
+    "@typescript-eslint/no-var-requires": 0, // 解决 Require statement not part of import statement 在vue.config.js 里面的require的警告
+    "@typescript-eslint/explicit-module-boundary-types": "off", // 解决 Missing return type on function 函数上缺少返回类型
+    "@typescript-eslint/no-explicit-any": ["off"], // 关闭any类型的警告
   },
 };
