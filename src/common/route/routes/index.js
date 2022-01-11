@@ -2,10 +2,11 @@
  * @Author: xingpan
  * @Date: 2021-10-30 10:21:57
  * @Last Modified by: xingpan
- * @Last Modified time: 2021-12-31 16:35:28
+ * @Last Modified time: 2022-01-11 10:19:43
  */
 
 import test from "./test";
+import node from "./node";
 
 export default [
   {
@@ -18,6 +19,7 @@ export default [
     },
   },
   ...test,
+  ...node,
   {
     path: "/",
     redirect: { name: "homeWeb" },

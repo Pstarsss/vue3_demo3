@@ -70,7 +70,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-@import "~@/common/style/variables.less";
+@import "~@/common/style/common.less";
 
 .T1 {
   padding: 10px;
