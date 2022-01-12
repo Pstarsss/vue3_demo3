@@ -109,7 +109,7 @@ export default defineComponent({
 </script>
 
 <style scoped lang="less">
-@import "~@/common/style/variables.less";
+@import "~@/common/style/common.less";
 
 .px-header {
   background: #fff;

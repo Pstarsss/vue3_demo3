@@ -2,7 +2,7 @@
  * @Author: xingpan
  * @Date: 2021-10-19 10:44:15
  * @Last Modified by: xingpan
- * @Last Modified time: 2022-01-11 11:31:19
+ * @Last Modified time: 2022-01-12 15:10:24
  */
 
 const path = require("path");
@@ -35,16 +35,29 @@ function getLessVariables(fileUrl, list = {}) {
     }, list);
 }
 
-const modifyVars = getLessVariables(resolvePath('./src/assets/less/variables.less'));
+const modifyVars = getLessVariables(resolvePath('./src/common/variables.less'));
+
+import variables from './src/assets/js/modify-vars';
 
 module.exports = {
   lintOnSave: false,
   runtimeCompiler: true,
 
+  pluginOptions: {
+    "style-resources-loader": {
+        preProcessor: "less",
+        patterns: [
+           // 存放less变量文件的路径
+            path.resolve(__dirname, "./src/common/variables.less")
+        ]
+    }
+  },
+
   css: {
     // sourceMap: false,
     loaderOptions: {
       less: {
+        modifyVars: variables,
         javascriptEnabled: true
       },
     },

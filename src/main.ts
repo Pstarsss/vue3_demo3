@@ -8,7 +8,6 @@ import App from "./App.vue";
 
 import store from "./common/store/store";
 import { Router } from "./common/route/index";
-import '@/common/style/index.less';
 
 import components from "./common/components/index";
 
