@@ -2,7 +2,7 @@
  * @Author: xingpan
  * @Date: 2021-10-19 10:44:15
  * @Last Modified by: xingpan
- * @Last Modified time: 2022-01-12 15:10:24
+ * @Last Modified time: 2022-01-12 15:36:56
  */
 
 const path = require("path");
@@ -35,9 +35,13 @@ function getLessVariables(fileUrl, list = {}) {
     }, list);
 }
 
-const modifyVars = getLessVariables(resolvePath('./src/common/variables.less'));
+const modifyVars = {
+    'primary-color': '#ec6800',
 
-import variables from './src/assets/js/modify-vars';
+    'layout-header-title': '#7575D5',
+    'header-title': '30px',
+    'header-font-size': '30px',
+}  
 
 module.exports = {
   lintOnSave: false,
@@ -57,7 +61,7 @@ module.exports = {
     // sourceMap: false,
     loaderOptions: {
       less: {
-        modifyVars: variables,
+        modifyVars,
         javascriptEnabled: true
       },
     },

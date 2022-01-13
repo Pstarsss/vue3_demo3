@@ -1,6 +1,8 @@
 <template>
     <div class="">
-      <div class="px-title">node 操作命令行</div>
+      <div class="px-title">
+          为什么需要webpack？ 为什么 为什么 为什么
+      </div>
     </div>
 </template>
 
