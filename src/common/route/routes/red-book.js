@@ -2,7 +2,7 @@
  * @Author: xingpan
  * @Date: 2021-10-30 10:07:54
  * @Last Modified by: xingpan
- * @Last Modified time: 2022-01-13 10:26:10
+ * @Last Modified time: 2022-02-15 14:08:15
  */
 
 const component = { template: "<router-view />" };
@@ -24,6 +24,14 @@ export default [
           navTitle: "冲哇",
         },
         component: () => import("@/page/red-book/red-book-chapter1"),
+      },
+      {
+        name: "reb-book-chapter2",
+        path: "/red-book/c2",
+        meta: {
+          navTitle: "冲哇2",
+        },
+        component: () => import("@/page/red-book/red-book-chapter2"),
       }
     ],
   },
