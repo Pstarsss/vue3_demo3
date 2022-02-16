@@ -2,6 +2,7 @@
     <div class="">
       <div class="px-title">
         <img src="./img/vue-init.png">
+        <img src="./img/js-??.png">
       </div>
     </div>
 </template>
@@ -16,7 +17,6 @@ export default defineComponent({
 
     setup() {
         return {
-s
         }
     }
 
