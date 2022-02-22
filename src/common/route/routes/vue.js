@@ -2,28 +2,28 @@
  * @Author: xingpan
  * @Date: 2021-10-30 10:07:54
  * @Last Modified by: xingpan
- * @Last Modified time: 2022-02-22 10:27:03
+ * @Last Modified time: 2022-02-22 10:27:17
  */
 
 const component = { template: "<router-view />" };
 
 export default [
   {
-    name: "rebBook",
-    path: "/reb-book",
+    name: "vue",
+    path: "/vue",
     meta: {
-      navTitle: "打死不看小红书",
+      navTitle: "vue",
       icon: "ContainerOutlined",
     },
     component,
     children: [
       {
-        name: "reb-book-chapter1",
-        path: "/red-book/c1",
+        name: "vue-1",
+        path: "/vue/d1",
         meta: {
-          navTitle: "冲哇",
+          navTitle: "vue源码",
         },
-        component: () => import("@/page/red-book/red-book-chapter1"),
+        component: () => import("@/page/vue/vue_1"),
       }
     ],
   },
