@@ -2,7 +2,7 @@
  * @Author: xingpan
  * @Date: 2021-10-30 10:07:54
  * @Last Modified by: xingpan
- * @Last Modified time: 2022-02-22 10:27:17
+ * @Last Modified time: 2022-04-08 11:19:25
  */
 
 const component = { template: "<router-view />" };
@@ -24,6 +24,22 @@ export default [
           navTitle: "vue源码",
         },
         component: () => import("@/page/vue/vue_1"),
+      },
+      {
+        name: "vue-2",
+        path: "/vue/d2",
+        meta: {
+          navTitle: "vue右键点击",
+        },
+        component: () => import("@/page/vue/v_1"),
+      },
+      {
+        name: "vue-table-click",
+        path: "/vue/vue-table-click",
+        meta: {
+          navTitle: "vue表格内的右键点击",
+        },
+        component: () => import("@/page/vue/vue-table-click"),
       }
     ],
   },
