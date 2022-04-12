@@ -24,5 +24,5 @@ app.use(Router);
 app.mount("#app");
 
 for (const i in icons) {
-  app.component(i, icons[i]);
+    app.component(i, icons[i]);
 }

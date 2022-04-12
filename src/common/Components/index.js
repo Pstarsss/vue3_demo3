@@ -2,7 +2,7 @@
  * @Author: xingpan
  * @Date: 2021-10-14 15:14:50
  * @Last Modified by: xingpan
- * @Last Modified time: 2022-04-06 14:57:40
+ * @Last Modified time: 2022-04-09 20:38:14
  */
 
 import {
@@ -14,7 +14,8 @@ import {
   Menu,
   Upload,
   Breadcrumb,
-  Table
+  Table,
+  Input
 } from "ant-design-vue";
 
 export default {
@@ -28,7 +29,8 @@ export default {
       Menu,
       Upload,
       Breadcrumb,
-      Table
+      Table,
+      Input
     ].forEach((plugin) => Vue.use(plugin));
   },
 };

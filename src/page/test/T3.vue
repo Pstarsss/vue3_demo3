@@ -6,12 +6,13 @@
 import { onMounted } from "vue";
 
 export default {
-  name: "T3",
+    
+    name: "T3",
 
-  setup() {
-    onMounted(() => ({}));
+    setup() {
+        onMounted(() => ({}));
 
-    return {};
-  },
+        return {};
+    },
 };
 </script>

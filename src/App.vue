@@ -7,6 +7,7 @@
 </template>
 
 <script lang="ts">
+
 import { ref, defineComponent, onMounted, provide, readonly } from "vue";
 
 import { message } from "ant-design-vue";
@@ -22,39 +23,42 @@ import "moment/locale/zh-cn";
 moment.locale("en");
 
 export default defineComponent({
+
   name: "App",
 
   components: {
-    PxLayout,
+      PxLayout,
   },
 
   setup() {
+
     let locale: any = ref();
 
     onMounted(() => {
-      initProvide();
+        initProvide();
     });
 
     function initProvide() {
-      provide("$messageInfo", message.info);
-      provide("$messageSuccess", message.success);
-      provide("$messageError", message.error);
-      provide("$messageWarning", message.warning);
-      provide("$messageWarn", message.warn);
-      provide("$messageLoading", message.loading);
-      provide("locale", readonly(locale));
-      provide("changeLocale", changeLocale);
+        provide("$messageInfo", message.info);
+        provide("$messageSuccess", message.success);
+        provide("$messageError", message.error);
+        provide("$messageWarning", message.warning);
+        provide("$messageWarn", message.warn);
+        provide("$messageLoading", message.loading);
+        provide("locale", readonly(locale));
+        provide("changeLocale", changeLocale);
     }
 
     function changeLocale() {
-      locale = zhCN;
-      moment.locale("zh-cn");
+        locale = zhCN;
+        moment.locale("zh-cn");
     }
 
     return {
-      moment,
-      locale: enUS,
+        moment,
+        locale: enUS,
     };
+
   },
 });
 </script>

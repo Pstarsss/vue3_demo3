@@ -63,7 +63,7 @@
 
                         // 获取位置， 展示菜单
                         // 位置计算（定位基于 菜单 && 表格的父元素）， 点击的位置 - 表格的位置 = 菜单展示的位置
-                        // 边缘展示处理， 当 页面视口宽高 - 点击的位置的空间 小于 菜单的空间  菜单的位置即为：页面视口宽高 - 表格宽高
+                        // 边缘展示处理， 当 页面视口宽高 - 点击的位置的空间 小于 菜单的空间  菜单的位置即为：点击宽高 - 表格宽高
                         const {left: tableLeft, top: tableTop} = document.querySelector('.px-table').getBoundingClientRect(); // 表格位置 宽高
                         const ContextMenu = document.querySelector('#context-menu');
                         const {clientWidth: ContextMenuWidth, clientHeight: ContextMenuHeight} = ContextMenu; // 菜单位置 宽高
@@ -95,6 +95,7 @@
                     const ContextMenu = document.querySelector('#context-menu');
                     ContextMenu.style.visibility = 'hidden';
                 }, false);
+
             })
 
             onBeforeUnmount(() => {
@@ -172,7 +173,5 @@
             }
         }
     }
-
-    
 }
 </style>
