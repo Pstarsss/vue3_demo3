@@ -7,7 +7,7 @@
                 :columns="columns" 
                 :customHeaderCell="customHeaderCell"
             />
-
+            
             <div id="context-menu">
                 <ul class="wrapper">
                     <li class="menu-item" @click="copy">
@@ -90,16 +90,17 @@
                 });
             }
 
-            onMounted(() => {
-                document.addEventListener('click', () => {
-                    const ContextMenu = document.querySelector('#context-menu');
-                    ContextMenu.style.visibility = 'hidden';
-                }, false);
+            function hiddenContextMenu() {
+                const ContextMenu = document.querySelector('#context-menu');
+                ContextMenu.style.visibility = 'hidden';
+            }
 
+            onMounted(() => {
+                document.addEventListener('click', hiddenContextMenu, false);
             })
 
             onBeforeUnmount(() => {
-                document.removeEventListener('click', () => ({}), false);
+                document.removeEventListener('click', hiddenContextMenu, false);
             }) 
 
             return {

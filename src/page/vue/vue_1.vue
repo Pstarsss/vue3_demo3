@@ -18,9 +18,6 @@ export default defineComponent({
     setup() {
 
         onMounted(() => {
-            let timer;
-            timer = setTimeout(() => {console.log('232')}, 1000);
-            clearTimeout(timer);
         });
 
         return {
