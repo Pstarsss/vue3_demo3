@@ -30,6 +30,6 @@ module.exports = {
                 offsetTernaryExpressions: false,
                 ignoreComments: false
             }
-        ],// 保存代码的时候 缩进4个空格
+        ]// 保存代码的时候 缩进4个空格
     },
 };
