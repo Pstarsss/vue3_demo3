@@ -1,9 +1,9 @@
 <template>
     <div class="">
-      <div class="px-title">
-        <img src="./img/vue-init.png">
-        <img src="./img/js-1.png">
-      </div>
+        <div class="px-title">
+            <img src="./img/vue-init.png">
+            <img src="./img/js-1.png">
+        </div>
     </div>
 </template>
 

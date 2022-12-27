@@ -24,7 +24,16 @@ module.exports = {
         "@typescript-eslint/explicit-module-boundary-types": "off", // 解决 Missing return type on function 函数上缺少返回类型
         "@typescript-eslint/no-explicit-any": ["off"], // 关闭any类型的警告
 
-        // 保存代码的时候 缩进4哥空格
-        "indent": ['error', 4], // 
+        
+        "indent": [
+            'error', 
+            4, 
+            {
+                SwitchCase: 1,
+                flatTernaryExpressions: false,
+                offsetTernaryExpressions: false,
+                ignoreComments: false
+            }
+        ],// 保存代码的时候 缩进4个空格
     },
 };

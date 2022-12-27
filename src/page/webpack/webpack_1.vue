@@ -56,14 +56,15 @@ export default defineComponent({
 
 <style lang="less" scoped>
 
-.px-wrapper {
-    padding: 10px 30px;
-}
-
-ul {
-    li {
-        padding: 20px;
-        list-style: auto;
+    .px-wrapper {
+        padding: 10px 30px;
     }
-}
+
+    ul {
+        li {
+            padding: 20px;
+            list-style: auto;
+        }
+    }
+
 </style>

@@ -1,9 +1,9 @@
 <template>
-  <div class="app">
-    <a-config-provider :locale="locale">
-      <px-layout></px-layout>
-    </a-config-provider>
-  </div>
+    <div class="app">
+        <a-config-provider :locale="locale">
+            <px-layout />
+        </a-config-provider>
+    </div>
 </template>
 
 <script lang="ts">
@@ -24,45 +24,45 @@ moment.locale("en");
 
 export default defineComponent({
 
-  name: "App",
+    name: "App",
 
-  components: {
-      PxLayout,
-  },
+    components: {
+        PxLayout,
+    },
 
-  setup() {
+    setup() {
 
-    let locale: any = ref();
+        let locale: any = ref();
 
-    onMounted(() => {
-        initProvide();
-    });
+        onMounted(() => {
+            initProvide();
+        });
 
-    function initProvide() {
-        provide("$messageInfo", message.info);
-        provide("$messageSuccess", message.success);
-        provide("$messageError", message.error);
-        provide("$messageWarning", message.warning);
-        provide("$messageWarn", message.warn);
-        provide("$messageLoading", message.loading);
-        provide("locale", readonly(locale));
-        provide("changeLocale", changeLocale);
+        function initProvide() {
+            provide("$messageInfo", message.info);
+            provide("$messageSuccess", message.success);
+            provide("$messageError", message.error);
+            provide("$messageWarning", message.warning);
+            provide("$messageWarn", message.warn);
+            provide("$messageLoading", message.loading);
+            provide("locale", readonly(locale));
+            provide("changeLocale", changeLocale);
+        }
+
+        function changeLocale() {
+            locale = zhCN;
+            moment.locale("zh-cn");
+        }
+
+        return {
+            moment,
+            locale: enUS,
+        };
+
     }
-
-    function changeLocale() {
-        locale = zhCN;
-        moment.locale("zh-cn");
-    }
-
-    return {
-        moment,
-        locale: enUS,
-    };
-
-  },
 });
 </script>
 
-<style>
+<style lang="less">
 @import "~@/common/style/index.less";
 </style>
