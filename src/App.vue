@@ -8,7 +8,7 @@
 
 <script lang="ts">
 
-import { ref, defineComponent, onMounted, provide, readonly } from "vue";
+import vue, { ref, defineComponent, onMounted, provide, readonly } from "vue";
 
 import { message } from "ant-design-vue";
 

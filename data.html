@@ -26,14 +26,14 @@
             })
         };
 
-        let pro = Promise.all([setA(), setB()]).then(() => {
-            console.log('a + b', a + b);
-            return a + b;
-        });
-        let proThen = pro.then((values) => {
-            console.log('values', values);
-            return values;
-        });
+        // let pro = Promise.all([setA(), setB()]).then(() => {
+        //     console.log('a + b', a + b);
+        //     return a + b;
+        // });
+        // let proThen = pro.then((values) => {
+        //     console.log('values', values);
+        //     return values;
+        // });
 
         function aa() {
             if (true) {
@@ -64,7 +64,37 @@
                     document.getElementById('text').innerHTML = responseText;
                 }
             }
-        }   
+        } 
+        
+        function catcha() {
+            try {
+                console.log('try-1');
+                throw new Error('try1-手动报错')
+            } catch (error) {
+                console.log('error', error);
+            }
+
+            console.log('2');
+            try {
+                console.log('try-2');
+            } catch (error) {
+                
+            }
+        }
+
+        function aaa() {
+            const submitSuccess = async () => {
+                alert('1');
+                await new Promise((resolve) => {
+                    setTimeout(() => {resolve();}, 1000);
+                });
+            };
+
+            alert('3');
+        }
+
+        catcha();
+        aaa();
     </script>
 </body>
 </html>
