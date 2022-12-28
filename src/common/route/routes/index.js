@@ -2,10 +2,10 @@
  * @Author: xingpan
  * @Date: 2021-10-30 10:21:57
  * @Last Modified by: xingpan
- * @Last Modified time: 2022-12-27 15:58:25
+ * @Last Modified time: 2022-12-28 15:34:56
  */
 
-import test from "./test";
+import css from "./css";
 import node from "./node";
 import webpack from "./webpack";
 import redBook from "./red-book";
@@ -20,11 +20,11 @@ export default [
         path: "/index",
         component: { template: "<div></div>" },
         meta: {
-        navTitle: "首页",
+            navTitle: "首页",
             hideInSider: true,
-        },
+        }
     },
-    ...test,
+    ...css,
     ...node,
     ...webpack,
     ...redBook,
@@ -37,13 +37,13 @@ export default [
         redirect: { name: "homeWeb" },
         meta: {
             hideInSider: true,
-        },
+        }
     },
     {
         path: "/:catchAll(.*)",
         redirect: { name: "homeWeb" },
         meta: {
             hideInSider: true,
-        },
-    },
+        }
+    }
 ];

@@ -2,52 +2,52 @@
  * @Author: xingpan
  * @Date: 2021-10-30 10:07:54
  * @Last Modified by: xingpan
- * @Last Modified time: 2022-04-12 10:47:38
+ * @Last Modified time: 2022-12-28 15:33:56
  */
 
 const component = { template: "<router-view />" };
 
 export default [
     {
-        name: "test",
-        path: "/test",
+        name: "css",
+        path: "/css",
         meta: {
-        navTitle: "css啦",
+            navTitle: "css啦",
             icon: "StarOutlined",
         },
         component,
         children: [
             {
                 name: "background-border",
-                path: "/test/t1",
+                path: "/css/t1",
                 meta: {
                     navTitle: "背景与边框",
                 },
-                component: () => import("@/page/test/T1"),
+                component: () => import("@/page/css/T1"),
             },
             {
                 name: "T2",
-                path: "/test/t2",
+                path: "/css/t2",
                 meta: {
                     navTitle: "测试modal",
                 },
-                component: () => import("@/page/test/T2"),
+                component: () => import("@/page/css/T2"),
             },
             {
                 name: "T3",
-                path: "/test/t3",
+                path: "/css/t3",
                 meta: {
                     navTitle: "白页",
                 },
-                component: () => import("@/page/test/T3"),
+                component: () => import("@/page/css/T3"),
             },
             {
                 name: "T4",
-                path: "/test/t4",
+                path: "/css/t4",
                 meta: {
                     navTitle: "表格demo",
                 },
-                component: () => import("@/page/test/T4"),
+                component: () => import("@/page/css/T4"),
             }
         ]
     }
