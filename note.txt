@@ -1,0 +1,41 @@
+setUp(props, context) {
+    return {
+
+    }
+}
+    只在初始化的时候调用一次；
+     然后setUp的执行时机是在beforeCreate之前执行的；
+     
+     setUp函数在执行的时候 ，当前组建还未创建出来；
+    因此this并没有 == undefined；因此不能够通过this去访问一些data computed methods props等数据
+      同时所有的composition API相关的毁掉函数都是不可使用的。
+
+
+    返回值： 一个对象；
+
+    setUp不能是 async函数 。那么会报错；
+        在setUp（）不能访问data与methods里面的东西；因为this
+
+    参数：
+        props：是个对象，里面是父组件传递给子组件的数据，因此可以通过props获取对应的传值；
+        context： 是个对象：
+            attrs:获取当前组件标上的所有属性（prop未接收的属性）的对象。(this.$attrs)；
+            emit: 事件分发。  (this.$emit)  通过context.emit去触发;
+            slot:
+data(){
+    return {
+
+    }
+}  
+
+    这个data与setUp返回的对象会一起合并成为组建对象的属性。
+        ？ 覆盖  
+        setUp（）的优先；
+        还有尽量不要同时使用data与setUp
+
+
+
+ref 
+
+customRef
+
