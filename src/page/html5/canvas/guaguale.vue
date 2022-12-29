@@ -1,3 +1,8 @@
+<!-- @author xingpan -->
+<!-- @email xingpan@1377689310.com -->
+<!-- @date 2022-12-29 10:42:21 -->
+<!-- @desc index -->
+
 <script setup lang="ts">
 
     import {ref, onMounted} from 'vue';

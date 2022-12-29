@@ -1,3 +1,10 @@
+/*
+ * @Author: xingpan 
+ * @Date: 2022-12-29 10:57:40 
+ * @Last Modified by:   xingpan 
+ * @Last Modified time: 2022-12-29 10:57:40 
+ */
+
 import { createApp } from "vue";
 
 import { message } from "ant-design-vue";

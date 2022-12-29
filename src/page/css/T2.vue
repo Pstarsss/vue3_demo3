@@ -1,3 +1,8 @@
+<!-- @author xingpan -->
+<!-- @email xingpan@1377689310.com -->
+<!-- @date 2022-12-29 10:42:21 -->
+<!-- @desc index -->
+
 <template>
   <div class="T2">
     <a-button type="primary" @click="changeLocale"> changeLocale </a-button>
