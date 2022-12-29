@@ -2,7 +2,7 @@
  * @Author: xingpan
  * @Date: 2021-10-30 10:07:54
  * @Last Modified by: xingpan
- * @Last Modified time: 2022-12-29 15:04:43
+ * @Last Modified time: 2022-12-29 18:52:14
  */
 
 const component = { template: "<router-view />" };
@@ -40,7 +40,15 @@ export default [
                     navTitle: "vue-demo-practice",
                 },
                 component: () => import("@/page/vue/practices/index"),
-            }
+            },
+            {
+                name: "vue-show-display-table",
+                path: "/vue/vue-show-display-table",
+                meta: {
+                    navTitle: "vue-show-display-table",
+                },
+                component: () => import("@/page/vue/vue-show-display-table"),
+            },
         ]
     }
 ];

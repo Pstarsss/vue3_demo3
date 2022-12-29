@@ -5,22 +5,34 @@
 
 <template>
     <div class="">
-
+        <a-config-provider>
+            <div class="example">
+                <a-table :data-source="dataSource" :columns="columns" />
+            </div>
+        </a-config-provider>
     </div>
 </template>
 
 <script lang="ts">
 
-import { defineComponent } from 'vue';
+import { defineComponent, reactive, onMounted } from 'vue';
 
 export default defineComponent({
 
-    name: '',
+    name: 'displayTable',
 
+    props: {
+        records: {
+            type: Array,
+            default: []
+        }
+    },
+    
     setup() {
-
+        return {
+            columns: {}
+        }
     }
-
 })
 
 </script>

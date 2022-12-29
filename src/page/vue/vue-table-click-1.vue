@@ -80,7 +80,11 @@
                     {
                         title: '姓名',
                         dataIndex: 'name',
-                        key: 'name'
+                        key: 'name',
+                        // 自定义渲染 数据
+                        customRender: ({text, record, index, column}) => {
+                            return <div>{text} - 1</div>
+                        }
                     },
                     {
                         title: '年龄',
