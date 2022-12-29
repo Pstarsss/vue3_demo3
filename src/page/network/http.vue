@@ -50,6 +50,8 @@
                 HTTPS可以有效的防止运营商劫持，解决了防劫持的一个大问题。
               </p>
           </div>
+
+            <img src="./img/img-1.png">
       </section>
     </div>
 </template>
