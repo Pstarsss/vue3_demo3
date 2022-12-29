@@ -41,6 +41,6 @@ module.exports = {
                     import: true,
                 }
             }
-        ],
+        ]
     },
 };
