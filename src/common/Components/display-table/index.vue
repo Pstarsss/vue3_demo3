@@ -4,10 +4,10 @@
 <!-- @desc index -->
 
 <template>
-    <div class="">
+    <div class="px-table">
         <a-config-provider>
             <div class="example">
-                <a-table :data-source="dataSource" :columns="columns" />
+                <a-table :data-source="dataSource" :columns="[]" />
             </div>
         </a-config-provider>
     </div>
@@ -15,22 +15,33 @@
 
 <script lang="ts">
 
-import { defineComponent, reactive, onMounted } from 'vue';
+import { defineComponent, reactive, onMounted, defineProps } from 'vue';
 
 export default defineComponent({
 
     name: 'displayTable',
 
-    props: {
-        records: {
-            type: Array,
-            default: []
-        }
-    },
-    
     setup() {
+        const props = defineProps<{
+            records: {
+                type: Array<Object>,
+                default: []
+            },
+
+            options: {
+                type: Object,
+                default: {}
+            }
+        }>();
+
+/*
+    options处理： columns && rowKey属性 
+    对columns的title && row 设置插槽属性。
+    records: 数据 watct处理。 
+*/
+
         return {
-            columns: {}
+            columns: []
         }
     }
 })
@@ -38,5 +49,7 @@ export default defineComponent({
 </script>
 
 <style lang='less' scoped>
+    .px-table {
 
+    }
 </style>
