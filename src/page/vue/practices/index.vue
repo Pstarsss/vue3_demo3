@@ -2,7 +2,13 @@
     <div class="card">
         <Header @addInfo="addInfo" />
         <List :todos="todos" />
-        <Footer :completedCount="completedCount" :allCount="todos.length" :allState="allState" @tickAll="tickAll"  @clearAllTasks="clearAllTasks" />
+        <Footer 
+            :completedCount="completedCount" 
+            :allCount="todos.length" 
+            :allState="allState" 
+            @tickAll="tickAll"  
+            @clearAllTasks="clearAllTasks" 
+        />
     </div>
 </template>
 <script lang="ts">
@@ -36,15 +42,15 @@ export default defineComponent({
                 title: message,
                 isCompleted: false
             })
-        }
+        };
 
         function tickAll(allState:boolean) {
             tempState.todos.forEach(i => i.isCompleted = allState);
-        }
+        };
 
         function clearAllTasks() {
             tempState.todos = [];
-        }
+        };
 
         const completedCount = computed(() => tempState.todos.filter(i => i.isCompleted).length);
         const allState = computed(() => tempState.todos.every(i => i.isCompleted));
@@ -52,7 +58,7 @@ export default defineComponent({
         onUnmounted(() => {
             bus.$off('dele');
             bus.$off('changeTodo');
-        })
+        });
 
         onMounted(() => {
             bus.$on('dele', (index: number) => {
@@ -62,7 +68,7 @@ export default defineComponent({
             bus.$on('changeTodo', ({index, isCompleted}) => {
                 tempState.todos[index].isCompleted = isCompleted;
             });
-        })
+        });
 
         return {
             ...toRefs(tempState),

@@ -5,7 +5,28 @@
 
 <template>
     <div class="">
-        <px-table></px-table>
+        <!-- <px-table></px-table> -->
+        
+        <!-- 打开摄像头？?  不行-->
+
+        <label for="environment">Capture environment</label>
+        <br>
+        <input 
+            type="file"
+            id="environment"
+            capture="environment"
+            accept="video/*"
+        >
+
+        <br>
+        <label for="user">Capture user</label>
+        <br>
+        <input 
+            type="file"
+            id="user"
+            capture="user"
+            accept="image/*"
+        >
     </div>
 </template>
 

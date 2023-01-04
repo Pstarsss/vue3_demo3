@@ -2,7 +2,7 @@
     <li class="item">
         <label>
             <input type="checkbox" v-model="todo.isCompleted" @click="updateState">
-            <span class="todo-title">{{todo.title}}</span>
+            <span class="todo-title">{{ todo.title }}</span>
         </label>
         <button class="btn btn-danger"  @click="dele">删除</button>
     </li>
