@@ -2,7 +2,7 @@
  * @Author: xingpan
  * @Date: 2021-10-30 10:21:57
  * @Last Modified by: xingpan
- * @Last Modified time: 2022-12-28 15:34:56
+ * @Last Modified time: 2023-01-05 15:40:52
  */
 
 import css from "./css";
@@ -13,6 +13,7 @@ import netWork from "./network";
 import typescript from "./typescript";
 import html5 from "./html5";
 import vue from "./vue";
+import leetcode from "./leetcode";
 
 export default [
     {
@@ -32,6 +33,7 @@ export default [
     ...typescript,
     ...html5,
     ...vue,
+    ...leetcode,
     {
         path: "/",
         redirect: { name: "homeWeb" },
