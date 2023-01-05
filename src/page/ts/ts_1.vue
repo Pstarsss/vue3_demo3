@@ -21,12 +21,16 @@
 
 import { defineComponent, onMounted } from 'vue';
 
+import matter from 'gray-matter';
+
 export default defineComponent({
 
     name: '',
 
     setup() {
         onMounted(function () {
+            const aa = matter('111', {});
+            console.log(aa);
         });
     }
 
