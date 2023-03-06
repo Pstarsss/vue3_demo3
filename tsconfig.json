@@ -1,39 +1,41 @@
 {
     "compilerOptions": {
-        "target": "esnext",
-        "module": "esnext",
-        "strict": true,
-        "jsx": "preserve",
-        "importHelpers": true,
-        "moduleResolution": "node",
-        "skipLibCheck": true,
-        "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true,
-        "sourceMap": true,
-        "noImplicitAny": false,
-        "noImplicitThis": false,
-        "baseUrl": ".",
-        "types": [
-            "webpack-env"
-        ],
-        "paths": {
-            "@/*": [
-                "src/*"
-            ]
-        },
-        "lib": [
-            "esnext",
-            "dom",
-            "dom.iterable",
-            "scripthost"
-        ]
+      "baseUrl": ".",
+      "target": "ESNext",
+      "useDefineForClassFields": true,
+      "module": "ESNext",
+      "moduleResolution": "Node",
+      "jsx": "preserve",
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "esModuleInterop": true,
+      "lib": [
+        "ESNext",
+        "DOM"
+      ],
+      "types": [
+          "node",
+          "express"
+      ],
+      "skipLibCheck": true,
+      "noEmit": true,
+      "allowJs": true,
+      "noImplicitAny": false
     },
     "include": [
-        "src/**/*.ts",
-        "src/**/*.tsx",
-        "src/**/*.vue"
+      "src/**/*.ts",
+      "src/**/*.d.ts",
+      "src/**/*.tsx",
+      "src/**/*.vue",
+      "server",
+      "yqg-common/**/*.ts",
+      "yqg-common/**/*.js",
+      "@shared/**/*.ts"
     ],
-    "exclude": [
-        "node_modules"
+    "references": [
+      {
+        "path": "./tsconfig.node.json"
+      }
     ]
-}
+  }
+  

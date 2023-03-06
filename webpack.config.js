@@ -1,13 +1,26 @@
-import path from "path";
+const path = require('path');
+const vueLoader = require('vue-loader');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 const resolvePath = (dir) => path.resolve(__dirname, dir);
+
+const postcssLoader = {
+    loader: 'postcss-loader',
+    options: {
+        postcssOptions: {
+            plugins: ['autoprefixer']
+        }
+    }
+};
 
 module.exports = {
     entry: "./src/main.ts",
 
+    mode: 'production',
+    
     output: {
-        path: path.resolve(__dirname, "dist"),
-        filename: "bundle.js",
+        path: path.join(__dirname, "build"),
+        filename: "pxBundle.js",
     },
 
     devServer: {
@@ -25,22 +38,62 @@ module.exports = {
 
     module: {
         rules: [
-            { test: /\.js$/, exclude: /node_modules/, use: ["babel-loader"] },
+            {
+                test: /\.tsx?$/,
+                use: [
+                    {
+                        loader: 'ts-loader',
+                        options: {
+                            transpileOnly: true,
+                            appendTsxSuffixTo: [/\.vue$/],
+                            compilerOptions: {
+                                allowJs: true,
+                                // vue recommend, https://vuejs.org/v2/guide/typescript.html#Recommended-Configuration
+                                module: 'es2015'
+                            }
+                        }
+                    }
+                ]
+            },
+            { 
+                test: /\.js$/, 
+                exclude: /node_modules/, 
+                loader: "babel-loader",
+                options: {
+                    presets: [
+                        [
+                            '@babel/preset-env',
+                            {
+                                useBuiltIns: 'usage',
+                                corejs: 3 // 新版本的@babel/polyfill包含了core-js@2和core-js@3版本，所以需要声明版本，否则webpack运行时会报warning
+                            }
+                        ]
+                    ]
+                }
+            },
             { test: /\.vue$/, use: ["vue-loader"] },
             {
                 test: /\.css$/i,
-                use: ["vue-style-loader", "style-loader", "css-loader"],
-                options: {
-                    import: true,
-                }
+                use: ["style-loader", "css-loader"]
             },
             {
                 test: /\.less$/i,
-                use: ["vue-style-loader", "style-loader", "less-loader"],
-                options: {
-                    import: true,
-                }
-            }
+                use: ["style-loader", "css-loader", postcssLoader, {
+                    loader: 'less-loader',
+                    options: {
+                        javascriptEnabled: true
+                    }
+                }]
+            },
+            {
+                test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|otf)$/,
+                type: 'asset'
+            },
         ]
     },
+
+    plugins: [
+        new CleanWebpackPlugin(),
+        new vueLoader.VueLoaderPlugin()
+    ]
 };
