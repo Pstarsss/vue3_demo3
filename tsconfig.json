@@ -32,10 +32,6 @@
       "yqg-common/**/*.js",
       "@shared/**/*.ts"
     ],
-    "references": [
-      {
-        "path": "./tsconfig.node.json"
-      }
-    ]
-  }
+    "references": []
+}
   

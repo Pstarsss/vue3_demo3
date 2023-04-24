@@ -2,6 +2,7 @@ const path = require('path');
 const vueLoader = require('vue-loader');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 const resolvePath = (dir) => path.resolve(__dirname, dir);
 
@@ -40,6 +41,7 @@ module.exports = {
         alias: {
             "@": resolvePath("src"),
             "px-admin": "./src",
+            "vue": "vue/dist/vue.esm-bundler.js"
         },
 
         //因import引入的vue文件都没有加.vue后缀导致报404，所以加了这个配置
@@ -103,6 +105,12 @@ module.exports = {
     },
 
     plugins: [
+        new webpack.DefinePlugin({
+            __VUE_OPTIONS_API__: true,  
+            // __VUE_OPTIONS_API__ 标志默认值是 true，这就意味着默认情况下 Vue3 项目中会包含支持 Options API 的这部分代码。那么，如果我们在项目中编写的都是 Composition API 代码，其实就不再需要这部分解析 Options API 的代码了，所以这里强烈建议我们对这个标志进行正确的配置，以便在最终构建时获得正确的摇树（tree-shaking，可以实现无用代码的自动删除，即如果发现某部分代码并没有被使用到，那么最终会将这部分代码删除掉，这样一来整体代码的体积会就变得更小些）效果。
+            __VUE_PROD_DEVTOOLS__: false
+        }),
+
         new CleanWebpackPlugin(),
         new vueLoader.VueLoaderPlugin(),
         new HtmlWebpackPlugin({
