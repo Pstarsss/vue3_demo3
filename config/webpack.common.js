@@ -1,9 +1,10 @@
-const path = require('path');
 const vueLoader = require('vue-loader');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { merge } = require('webpack-merge');
 
-const resolvePath = (dir) => path.resolve(__dirname, dir);
+const resolvePath = require('./path');
+const DevConfig = require('./webpack.dev');
+const ProdConfig = require('./webpack.prod');
 
 const postcssLoader = {
     loader: 'postcss-loader',
@@ -14,22 +15,13 @@ const postcssLoader = {
     }
 };
 
-module.exports = {
+const commonWebPackConfig = {
     entry: "./src/main.ts",
 
-    mode: 'development',
-
-    devtool: 'eval-cheap-module-source-map',
-
     output: {
-        path: path.resolve(__dirname, "build"),
+        path: resolvePath('./build'),
         filename: "js/[name].js",
-        publicPath: '/'
-    },
-
-    // 添加devServer 方便保存后的页面实时刷新； 
-    devServer: {
-        static: './build',
+        publicPath: resolvePath('./build')
     },
 
     optimization: {
@@ -38,8 +30,8 @@ module.exports = {
 
     resolve: {
         alias: {
-            "@": resolvePath("src"),
-            "px-admin": "./src",
+            "@": resolvePath("./src"),
+            "px-admin": resolvePath("./src"),
         },
 
         //因import引入的vue文件都没有加.vue后缀导致报404，所以加了这个配置
@@ -103,10 +95,14 @@ module.exports = {
     },
 
     plugins: [
-        new CleanWebpackPlugin(),
         new vueLoader.VueLoaderPlugin(),
         new HtmlWebpackPlugin({
             template: "public/index.html"
         })
     ]
 };
+
+module.exports = (env) => {
+    const isProd = env.production;
+    return isProd ? merge(commonWebPackConfig, ProdConfig) : merge(commonWebPackConfig, DevConfig);
+}

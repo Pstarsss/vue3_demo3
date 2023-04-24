@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_demo3=self.webpackChunkmy_demo3||[]).push([[885],{4885:function(n,e,u){u.r(e),u.d(e,{default:function(){return f}});var r=u(6252),t={class:"T3"},c={name:"T3",setup:function(){return(0,r.bv)((function(){return{}})),{}}},f=(0,u(3744).Z)(c,[["render",function(n,e,u,c,f,i){return(0,r.wg)(),(0,r.iD)("div",t)}]])}}]);
