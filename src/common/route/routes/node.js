@@ -23,7 +23,7 @@ export default [
                 meta: {
                     navTitle: "node操作命令行",
                 },
-                component: () => import("@/page/node/node_1"),
+                component: () => import("px-admin/page/node/node_1"),
             }
         ]
     }

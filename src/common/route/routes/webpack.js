@@ -23,7 +23,7 @@ export default [
                 meta: {
                     navTitle: "webpack理论知识",
                 },
-                component: () => import("@/page/webpack/webpack_1"),
+                component: () => import("px-admin/page/webpack/webpack_1"),
             }
         ]
     }

@@ -69,5 +69,5 @@ export default defineComponent({
 </script>
 
 <style lang="less">
-@import "~@/common/style/index.less";
+@import "~px-admin/common/style/index.less";
 </style>

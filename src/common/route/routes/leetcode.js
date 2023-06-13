@@ -23,7 +23,7 @@ export default [
                 meta: {
                     navTitle: "my题库",
                 },
-                component: () => import("@/page/leetcode/index"),
+                component: () => import("px-admin/page/leetcode/index"),
             }
         ]
     }

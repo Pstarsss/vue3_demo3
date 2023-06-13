@@ -9,7 +9,7 @@
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
-import bus from '@/common/util/bus'
+import bus from 'px-admin/common/util/bus'
 import {Todos} from './constant/practice';
 export default defineComponent({
     name:'Item',

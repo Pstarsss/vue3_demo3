@@ -23,7 +23,7 @@ export default [
                 meta: {
                     navTitle: "http知识",
                 },
-                component: () => import("@/page/network/http"),
+                component: () => import("px-admin/page/network/http"),
             },
             {
                 name: "network_xss",
@@ -31,7 +31,7 @@ export default [
                 meta: {
                     navTitle: "xss攻击",
                 },
-                component: () => import("@/page/network/xss"),
+                component: () => import("px-admin/page/network/xss"),
             },
         ]
     }

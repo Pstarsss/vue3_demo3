@@ -1,7 +1,7 @@
 import path from 'path';
 // const fileReader = new FileReader();
 // const file = new File();
-// const lessFileUrl = '@/common/style/variables.less';
+// const lessFileUrl = '@common/style/variables.less';
 
 // let result = fileReader.readAsText(lessFileUrl, 'utf8');
 

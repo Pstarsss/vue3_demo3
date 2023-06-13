@@ -1,37 +1,43 @@
 {
     "compilerOptions": {
-      "baseUrl": ".",
-      "target": "ESNext",
-      "useDefineForClassFields": true,
-      "module": "ESNext",
-      "moduleResolution": "Node",
-      "jsx": "preserve",
-      "resolveJsonModule": true,
-      "isolatedModules": true,
-      "esModuleInterop": true,
-      "lib": [
-        "ESNext",
-        "DOM"
-      ],
-      "types": [
-          "node",
-          "express"
-      ],
-      "skipLibCheck": true,
-      "noEmit": true,
-      "allowJs": true,
-      "noImplicitAny": false
+        "baseUrl": ".",
+        "paths": {
+            "px-admin/*": [
+                "src/*"
+            ]
+        },
+        "target": "ESNext",
+        "useDefineForClassFields": true,
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "jsx": "preserve",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "esModuleInterop": true,
+        "lib": [
+            "ESNext",
+            "DOM"
+        ],
+        "types": [
+            "node",
+            "express"
+        ],
+        "skipLibCheck": true,
+        "noEmit": true,
+        "allowJs": true,
+        "noImplicitAny": false
     },
     "include": [
-      "src/**/*.ts",
-      "src/**/*.d.ts",
-      "src/**/*.tsx",
-      "src/**/*.vue",
-      "server",
-      "yqg-common/**/*.ts",
-      "yqg-common/**/*.js",
-      "@shared/**/*.ts"
+        "src/**/*.ts",
+        "src/**/*.d.ts",
+        "src/**/*.tsx",
+        "src/**/*.vue",
+        "server"
     ],
-    "references": []
+    "references": [
+        {
+            "path": "./tsconfig.node.json"
+        }
+    ]
 }
   

@@ -31,7 +31,7 @@ const commonWebPackConfig = {
     resolve: {
         alias: {
             "@": resolvePath("./src"),
-            "px-admin": resolvePath("./src"),
+            "@": resolvePath("./src"),
         },
 
         //因import引入的vue文件都没有加.vue后缀导致报404，所以加了这个配置

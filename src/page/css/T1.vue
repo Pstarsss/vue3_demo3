@@ -81,7 +81,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-@import "~@/common/style/common.less";
+@import "~px-admin/common/style/common.less";
 
 .T1 {
     padding: 10px;
@@ -109,7 +109,7 @@ export default {
 }
 
 .t1-bg-origin {
-    background-image: url("~@/common/img/BingWallpaper (1).jpg");
+    background-image: url("~px-admin/common/img/BingWallpaper (1).jpg");
     background-position: center;
     padding: 20px;
     border: 10px solid aqua;

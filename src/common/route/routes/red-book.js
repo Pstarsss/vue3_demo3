@@ -23,7 +23,7 @@ export default [
                 meta: {
                     navTitle: "js-methods",
                 },
-                component: () => import("@/page/red-book/red-book-chapter1"),
+                component: () => import("px-admin/page/red-book/red-book-chapter1"),
             },
             {
                 name: "regExp",
@@ -31,7 +31,7 @@ export default [
                 meta: {
                     navTitle: "正则",
                 },
-                component: () => import("@/page/red-book/regExp"),
+                component: () => import("px-admin/page/red-book/regExp"),
             }
         ]
     }

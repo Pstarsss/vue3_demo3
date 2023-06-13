@@ -23,7 +23,7 @@ export default [
                 meta: {
                     navTitle: "ts.json",
                 },
-                component: () => import("@/page/ts/ts_1"),
+                component: () => import("px-admin/page/ts/ts_1"),
             }
         ]
     }

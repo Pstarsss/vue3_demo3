@@ -115,7 +115,7 @@ export default defineComponent({
 </script>
 
 <style scoped lang="less">
-@import "~@/common/style/common.less";
+@import "~px-admin/common/style/common.less";
 
 .px-header {
     background: #fff;

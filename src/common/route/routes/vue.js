@@ -23,7 +23,7 @@ export default [
                 meta: {
                     navTitle: "vue源码",
                 },
-                component: () => import("@/page/vue/vue_1"),
+                component: () => import("px-admin/page/vue/vue_1"),
             },
             {
                 name: "vue-table-click-version-1",
@@ -31,7 +31,7 @@ export default [
                 meta: {
                     navTitle: "a-table-右键点击-1",
                 },
-                component: () => import("@/page/vue/vue-table-click-1"),
+                component: () => import("px-admin/page/vue/vue-table-click-1"),
             },
             {
                 name: "vue-demo-practice",
@@ -39,7 +39,7 @@ export default [
                 meta: {
                     navTitle: "vue-demo-practice",
                 },
-                component: () => import("@/page/vue/practices/index"),
+                component: () => import("px-admin/page/vue/practices/index"),
             },
             {
                 name: "vue-show-display-table",
@@ -47,7 +47,7 @@ export default [
                 meta: {
                     navTitle: "vue-show-display-table",
                 },
-                component: () => import("@/page/vue/vue-show-display-table"),
+                component: () => import("px-admin/page/vue/vue-show-display-table"),
             },
         ]
     }

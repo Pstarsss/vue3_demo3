@@ -17,7 +17,7 @@ import Header from './Header.vue';
 import Footer from './Footer.vue';
 import List from './List.vue';
 
-import bus from '@/common/util/bus';
+import bus from 'px-admin/common/util/bus';
 import {Todos} from './constant/practice'
 
 export default defineComponent({

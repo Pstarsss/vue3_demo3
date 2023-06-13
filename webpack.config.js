@@ -39,8 +39,7 @@ module.exports = {
 
     resolve: {
         alias: {
-            "@": resolvePath("src"),
-            "px-admin": "./src",
+            "px-admin": resolvePath("src"),
             "vue": "vue/dist/vue.esm-bundler.js"
         },
 
